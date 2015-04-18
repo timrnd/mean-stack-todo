@@ -2,9 +2,8 @@ extends layout
 
 block head
   link(rel='stylesheet', href='/javascripts/vendor/bootstrap-css/css/bootstrap.css')
-
   script(type='text/javascript', src='/javascripts/controllers/TodoListController.js')
-
+  title MEAN Todo List
 block content
   div.container(ng-controller="TodoListController", ng-init="setTodos( #{JSON.stringify(todos)} )")
     h1 My Todo List
