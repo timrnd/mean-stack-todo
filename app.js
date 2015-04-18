@@ -12,7 +12,8 @@ var express = require('express')
 var app = express();
 
 var Mongoose = require('mongoose');
-var db = Mongoose.createConnection('localhost', 'mytestapp');
+//SET process.env.MONGODB_URI to connection string for local testing. On Windows SET MONGODB_URI=mongodb://CLOUDSERVICE.cloudapp.net/DATABASE
+var db = Mongoose.createConnection(process.env.MONGODB_URI || 'mongodb://localhost/tasks');
 
 var TodoSchema = require('./models/Todo.js').TodoSchema;
 var Todo = db.model('todos', TodoSchema);
